@@ -19,12 +19,14 @@ def extract_audio_features(path):
     print(f'[INFO] ===== extract audio labels for {path} =====')
 
     print(f'[INFO] ===== start extract esperanto =====')
-    cmd = f'python data_util/extract_esperanto.py --wav {path} --save_feats'
+    cmd = f'python3.9 data_util/extract_esperanto.py --wav {path} --save_feats'\
+          f' --model checkpoints/wav2vec2-large-xlsr-53-esperanto'
     os.system(cmd)
     print(f'[INFO] ===== extracted esperanto =====')
 
     print(f'[INFO] ===== extract deepspeech =====')
-    cmd = f'python data_util/deepspeech_features/extract_ds_features.py --input {path} --output {path.replace(".wav", "_deepspeech.npy")}'
+    cmd = f'python3.9 data_util/deepspeech_features/extract_ds_features.py --input {path} --output {path.replace(".wav", "_deepspeech.npy")}'\
+          f' --deepspeech checkpoints/DeepSpeech/deepspeech-0_1_0-b90017e8.pb'
     os.system(cmd)
     print(f'[INFO] ===== extracted deepspeech =====')
 
@@ -42,7 +44,7 @@ def extract_images(path, out_path, fps=25):
 def extract_semantics(ori_imgs_dir, parsing_dir):
 
     print(f'[INFO] ===== extract semantics from {ori_imgs_dir} to {parsing_dir} =====')
-    cmd = f'python data_util/face_parsing/test.py --respath={parsing_dir} --imgpath={ori_imgs_dir}'
+    cmd = f'python3.9 data_util/face_parsing/test.py --respath={parsing_dir} --imgpath={ori_imgs_dir}'
     os.system(cmd)
     print(f'[INFO] ===== extracted semantics =====')
 
@@ -273,7 +275,7 @@ def face_tracking(video_id, ori_imgs_dir):
     tmp_image = cv2.imread(image_paths[0], cv2.IMREAD_UNCHANGED) # [H, W, 3]
     h, w = tmp_image.shape[:2]
 
-    cmd = f'python data_util/face_tracking/face_tracker.py --idname={video_id} --img_h={h} --img_w={w} --frame_num={len(image_paths)}'
+    cmd = f'python3.9 data_util/face_tracking/face_tracker.py --idname={video_id} --img_h={h} --img_w={w} --frame_num={len(image_paths)}'
 
     os.system(cmd)
 
