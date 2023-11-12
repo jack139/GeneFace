@@ -1,5 +1,6 @@
 export PYTHONPATH=./
 export CUDA_VISIBLE_DEVICES=0
+export LD_LIBRARY_PATH=
 # 1. extrac 16khz wav
 python3.9 data_util/process.py --video_id=$1 --task=1
 # 2. extrac deepspeech and esperanto; 3.extract image frames 
