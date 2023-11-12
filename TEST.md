@@ -43,5 +43,11 @@ python_speech_features
 ### 测试
 
 ```bash
+# 准备数据
 bash data_gen/nerf/process_data.sh May
+# 推理
+bash scripts/infer_postnet.sh
+bash scripts/infer_lm3d_radnerf.sh
+# 生成结果
+ls infer_out/May/pred_video/zozo.mp4
 ```

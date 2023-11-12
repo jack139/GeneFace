@@ -169,3 +169,4 @@ deep_3drecon/mesh_renderer/bazel-testlogs
 
 
 *.pkl
+log.txt

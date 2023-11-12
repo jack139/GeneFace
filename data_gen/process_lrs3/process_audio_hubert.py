@@ -4,9 +4,9 @@ import numpy as np
 import torch
 
 print("Loading the Wav2Vec2 Processor...")
-wav2vec2_processor = Wav2Vec2Processor.from_pretrained("facebook/hubert-large-ls960-ft")
+wav2vec2_processor = Wav2Vec2Processor.from_pretrained("checkpoints/hubert-large-ls960-ft") # facebook/hubert-large-ls960-ft
 print("Loading the HuBERT Model...")
-hubert_model = HubertModel.from_pretrained("facebook/hubert-large-ls960-ft")
+hubert_model = HubertModel.from_pretrained("checkpoints/hubert-large-ls960-ft")
 
 
 def get_hubert_from_16k_wav(wav_16k_name):
