@@ -59,6 +59,41 @@ ls infer_out/May/pred_video/
 
 ### Pretrained model
 
+1. ```~/.cache/torch/hub/checkpoints/```
+
+```text
+2DFAN4-cd938726ad.zip
+alexnet-owt-7be5be79.pth
+resnet18-5c106cde.pth
+s3fd-619a316812.pth
 ```
 
+2. ```checkpoints/```
+
+```text
+DeepSpeech/
+hubert-large-ls960-ft/
+lrs3/
+May/
+wav2vec2-large-xlsr-53-esperanto/
+```
+
+3. ```deep_3drecon/checkpoints/```
+
+```text
+facerecon/
+```
+
+4. ```deep_3drecon/BFM/```
+
+```
+01_MorphableModel.mat
+BFM_front_idx.mat
+Exp_Pca.bin
+select_vertex_id.mat
+std_exp.txt
+BFM_exp_idx.mat
+BFM_model_front.mat
+facemodel_info.mat
+similarity_Lm3D_all.mat
 ```
