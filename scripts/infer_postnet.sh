@@ -1,6 +1,7 @@
+export PYTHONPATH=.
 export CUDA_VISIBLE_DEVICES=0
 export Video_ID=May
-export Wav_ID=zozo
+export Wav_ID=gdg
 export Postnet_Ckpt_Steps=4000 # please reach to `docs/train_models.md` to get some tips about how to select an approprate ckpt_steps!
 
 LD_LIBRARY_PATH= python3.9 inference/postnet/postnet_infer.py \

@@ -36,6 +36,9 @@ moviepy==1.0.3
 resampy==0.4.2
 configargparse==1.5.3
 python_speech_features
+praat-parselmouth==0.4.3
+pymcubes==0.1.4
+lpips==0.1.4
 ```
 
 
@@ -49,5 +52,13 @@ bash data_gen/nerf/process_data.sh May
 bash scripts/infer_postnet.sh
 bash scripts/infer_lm3d_radnerf.sh
 # 生成结果
-ls infer_out/May/pred_video/zozo.mp4
+ls infer_out/May/pred_video/
+```
+
+
+
+### Pretrained model
+
+```
+
 ```

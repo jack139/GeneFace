@@ -1,4 +1,4 @@
-from tkinter.tix import X_REGION
+#from tkinter.tix import X_REGION
 from numpy import isin
 import torch
 import torch.nn as nn
