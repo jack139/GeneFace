@@ -103,7 +103,7 @@ def load_processed_data(processed_dir):
 
     print("calculating lm3d ...")
     idexp_lm3d_arr = face3d_helper.reconstruct_idexp_lm3d(torch.from_numpy(identity_arr), torch.from_numpy(exp_arr)).cpu().numpy()
-    
+
     video_idexp_lm3d_mean = idexp_lm3d_arr.mean(axis=0).reshape([1,68,3])
     video_idexp_lm3d_std = idexp_lm3d_arr.std(axis=0).reshape([1,68,3])
     ret_dict['idexp_lm3d_mean'] = video_idexp_lm3d_mean
@@ -133,7 +133,7 @@ def load_processed_data(processed_dir):
         train_meta = json.load(f)
     with open(val_json_name) as f:
         val_meta = json.load(f)
-    bg_img = imageio.imread(background_img_name)
+    bg_img = imageio.v2.imread(background_img_name)
     ret_dict['bg_img'] = bg_img
     ret_dict['H'], ret_dict['W'] = bg_img.shape[:2]
     ret_dict['focal'], ret_dict['cx'], ret_dict['cy'] = float(train_meta['focal_len']), float(train_meta['cx']), float(train_meta['cy'])

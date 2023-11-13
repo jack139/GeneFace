@@ -39,25 +39,35 @@ python_speech_features==0.6
 praat-parselmouth==0.4.3
 pymcubes==0.1.4
 lpips==0.1.4
+opencv-contrib-python==4.7.0.72
+opencv-python==4.7.0.72
 ```
 
 
 
 ### 测试
 
+> 注意：视频 fps==25
+
 ```bash
 # 准备数据
-bash data_gen/nerf/process_data.sh May
-# 推理
+bash data_gen/nerf/process_data.sh News
+
+# 3D建模（训练）
+bash scripts/train_postnet.sh News
+bash scripts/train_radnerf.sh News
+
+# 合成视频
 bash scripts/infer_postnet.sh
 bash scripts/infer_lm3d_radnerf.sh
-# 生成结果
+
+# 结果视频位置
 ls infer_out/May/pred_video/
 ```
 
 
 
-### Pretrained model
+### Pretrained models
 
 1. ```~/.cache/torch/hub/checkpoints/```
 
@@ -74,7 +84,6 @@ s3fd-619a316812.pth
 DeepSpeech/
 hubert-large-ls960-ft/
 lrs3/
-May/
 wav2vec2-large-xlsr-53-esperanto/
 ```
 
