@@ -24,7 +24,7 @@ sudo apt-get install libasound2-dev portaudio19-dev
 
 ```text
 kornia==0.5.0
-dominate
+dominate==2.8.0
 ffmpeg-python==0.2.0
 pyaudio==0.2.13
 scikit-image==0.20.0
@@ -35,7 +35,7 @@ numba==0.56.4
 moviepy==1.0.3
 resampy==0.4.2
 configargparse==1.5.3
-python_speech_features
+python_speech_features==0.6
 praat-parselmouth==0.4.3
 pymcubes==0.1.4
 lpips==0.1.4
