@@ -58,9 +58,13 @@ bash data_gen/nerf/process_data.sh News
 bash scripts/train_postnet.sh News
 bash scripts/train_radnerf.sh News
 
+# postnet 可视化测试
+bash scripts/infer_postnet.sh News gdg
+PYTHONPATH=. python3.9 utils/visualization/lm_visualizer.py
+
 # 合成视频
-bash scripts/infer_postnet.sh
-bash scripts/infer_lm3d_radnerf.sh
+bash scripts/infer_postnet.sh News gdg
+bash scripts/infer_lm3d_radnerf.sh News gdg
 
 # 结果视频位置
 ls infer_out/May/pred_video/

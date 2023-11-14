@@ -48,10 +48,12 @@ def render_idexp_npy_to_lm_video(npy_name, out_video_name, audio_name=None):
     os.system(f"rm -r {tmp_img_dir}")
 
 if __name__ == '__main__':
+    Video_ID = "News"
+    Wav_ID = "gdg"
     import argparse
     argparser = argparse.ArgumentParser()
-    argparser.add_argument('--npy_name', type=str, default="infer_out/May/pred_lm3d/zozo.npy", help='the path of landmark .npy')
-    argparser.add_argument('--audio_name', type=str, default="data/raw/val_wavs/zozo.wav", help='the path of audio file')
-    argparser.add_argument('--out_path', type=str, default="infer_out/May/visualized_lm3d/zozo.mp4", help='the path to save visualization results')
+    argparser.add_argument('--npy_name', type=str, default=f"infer_out/{Video_ID}/pred_lm3d/{Wav_ID}.npy", help='the path of landmark .npy')
+    argparser.add_argument('--audio_name', type=str, default=f"data/raw/val_wavs/{Wav_ID}.wav", help='the path of audio file')
+    argparser.add_argument('--out_path', type=str, default=f"infer_out/{Video_ID}/visualized_lm3d/{Wav_ID}.mp4", help='the path to save visualization results')
     args = argparser.parse_args()
     render_idexp_npy_to_lm_video(args.npy_name, args.out_path, audio_name=args.audio_name)
