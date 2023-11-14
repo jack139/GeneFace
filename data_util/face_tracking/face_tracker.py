@@ -273,7 +273,7 @@ for iter in range(71):
             param_group['lr'] *= 0.2
         for param_group in optimizer_tl.param_groups:
             param_group['lr'] *= 0.2
-    #print(iter, loss_col.item(), loss_lan.item(), loss_regid.item(), loss_regexp.item())
+    print(iter, loss_col.item(), loss_lan.item(), loss_regid.item(), loss_regexp.item())
 
 # np2mesh(mesh, geometry[0, ...].detach().cpu().numpy(
 # ), os.path.join(id_dir, 'debug', 'id.ply'))

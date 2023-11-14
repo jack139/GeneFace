@@ -120,6 +120,11 @@ class Render_3DMM(nn.Module):
             diffuse_color=[[0., 0., 0.]]
         )
         sigma = 1e-4
+        # https://pytorch3d.readthedocs.io/en/v0.6.0/modules/renderer/rasterizer.html#pytorch3d.renderer.mesh.rasterizer.RasterizationSettings
+        # Error: "Bin size was too small in the coarse rasterization phase. 
+        # This caused an overflow, meaning output may be incomplete. 
+        # To solve, try increasing max_faces_per_bin / max_points_per_bin, 
+        # decreasing bin_size, or setting bin_size to 0 to use the naive rasterization."
         raster_settings = RasterizationSettings(
             image_size=(self.img_h, self.img_w),
             # blur_radius=np.log(1. / 1e-4 - 1.)*sigma / 18.0,
@@ -127,6 +132,8 @@ class Render_3DMM(nn.Module):
             # faces_per_pixel=2,
             faces_per_pixel=1,
             perspective_correct=False,
+            #bin_size=2**6, # to solve the above error? Maybe NO
+            #max_faces_per_bin=100,
         )
         blend_params = blending.BlendParams(background_color=[0, 0, 0])
         renderer = MeshRenderer(

@@ -41,6 +41,7 @@ pymcubes==0.1.4
 lpips==0.1.4
 opencv-contrib-python==4.7.0.72
 opencv-python==4.7.0.72
+pyqt5==5.14.2
 ```
 
 
