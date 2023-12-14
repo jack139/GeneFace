@@ -7,4 +7,4 @@ export LD_LIBRARY_PATH=
 # train Head NeRF
 python3.9 tasks/run.py --config=egs/datasets/videos/${Video_ID}/lm3d_radnerf.yaml --exp_name=${Video_ID}/lm3d_radnerf --reset
 # train Torso NeRF
-python3.9 tasks/run.py --config=egs/datasets/videos/${Video_ID}/lm3d_radnerf_torso.yaml --exp_name=${Video_ID}/lm3d_radnerf_torso --reset
+python3.9 tasks/run.py --config=egs/datasets/videos/${Video_ID}/lm3d_radnerf_torso_head_aware.yaml --exp_name=${Video_ID}/lm3d_radnerf_torso_head_aware --reset
